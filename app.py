@@ -9,7 +9,12 @@ cache = SimpleCache()
 def index():
 	ideas = cache.get('ideas') or []
 	ideas_list = ''
-	return f"{ideas}<br><form action=/submit method=post><input name=idea></form>"	
+	return f"""{ideas}<br>
+      <form action=/submit method=post>
+      <input name=idea>
+      </form>
+      <a href="/first_round_voting">finish submitting proposals</a>
+    """
 
 
 @app.route('/submit', methods=['POST'])
