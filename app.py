@@ -35,7 +35,9 @@ def voting():
 		link = f'<a href="/vote?index={i}">{idea}</a>'
 		links.append(link)
 
-	return f"<br>".join(links)
+	img = '<img src="https://upload.wikimedia.org/wikipedia/commons/4/48/Vote_with_check_for_v.svg" alt="yeah_vote">'
+
+	return img + f"<br>".join(links)
 
 
 
