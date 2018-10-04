@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, redirect
 from werkzeug.contrib.cache import SimpleCache
 
 
@@ -18,7 +18,7 @@ def submit_idea():
 	idea = request.form['idea']
 	ideas.append(idea)
 	cache.set('ideas', ideas, timeout=0)
-	return 'success'
+	return redirect('/')
 
 
 # @app.route('/first_round_voting')
