@@ -14,6 +14,7 @@ def index():
 	  <input type=submit value=submit>
 	  </form>
 	  <a href="/first_round_voting">finish submitting proposals</a>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/48/Vote_with_check_for_v.svg" alt="yeah_vote">
 	"""
 
 
