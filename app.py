@@ -7,11 +7,11 @@ cache = SimpleCache()
 
 @app.route('/')
 def index():
-	ideas = cache.get('ideas') or []
-	ideas_list = ''
-	return f"""{ideas}<br>
+    ideas = cache.get('ideas') or []
+    return f"""{ideas}<br>
       <form action=/submit method=post>
       <input name=idea>
+      <input type=submit value=submit>
       </form>
       <a href="/first_round_voting">finish submitting proposals</a>
     """
@@ -19,16 +19,16 @@ def index():
 
 @app.route('/submit', methods=['POST'])
 def submit_idea():
-	ideas = cache.get('ideas') or []
-	idea = request.form['idea']
-	ideas.append(idea)
-	cache.set('ideas', ideas, timeout=0)
-	return redirect('/')
+    ideas = cache.get('ideas') or []
+    idea = request.form['idea']
+    ideas.append(idea)
+    cache.set('ideas', ideas, timeout=0)
+    return redirect('/')
 
 
-# @app.route('/first_round_voting')
-# def hello():
-#     return 'Hello, World'
+@app.route('/first_round_voting')
+def hello():
+    return 'Hello, World'
 
 # @app.route('/second_round_voting')
 # def hello():
